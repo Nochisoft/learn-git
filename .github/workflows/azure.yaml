@@ -26,9 +26,9 @@ jobs:
             echo  "::set-env name=PROJECT_SPN::$acc_spn"
       - uses: actions/checkout@v2
       - name: Deploy dynamic secrets
-        uses: kornicameister/gh-secrets-action@master
+        uses: Nochisoft/gh-secrets-action@master
         with:
-          repository: kornicameister/gh-secrets-action
+          repository: Nochisoft/gh-secrets-action
           token: ${{ secrets.ACTION_PAT }}
           secrets: |
             AZURE_CRED1: {{ env.PROJECT_SPN }}
