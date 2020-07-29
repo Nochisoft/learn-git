@@ -3,7 +3,7 @@ name: Create project secret for azure access
 on:
   push:
      paths:
-       [ .github/workflows/azure.yml ]
+       [ .github/workflows/azure.yaml ]
     
 jobs:
   azure-access:
