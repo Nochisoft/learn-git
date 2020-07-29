@@ -24,7 +24,7 @@ jobs:
           inlineScript:  |
             acc_spn=$(az account show)
             echo  "::set-env name=PROJECT_SPN::$acc_spn"
-      -
+      - uses: actions/checkout@v2
       - name: Deploy dynamic secrets
         uses: kornicameister/gh-secrets-action@master
         with:
@@ -32,6 +32,8 @@ jobs:
           token: ${{ secrets.ACTION_PAT }}
           secrets: |
             AZURE_CRED1: {{ env.PROJECT_SPN }}
+            
+      
 
     
    
