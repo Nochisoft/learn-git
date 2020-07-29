@@ -24,11 +24,12 @@ jobs:
           inlineScript:  |
             acc_spn=$(az account show)
             echo  "::set-env name=PROJECT_SPN::$acc_spn"
+            echo "$acc_spn"
       - uses: actions/checkout@v2
       - name: Deploy dynamic secrets
         uses: Nochisoft/gh-secrets-action@master
         with:
-          repository: Nochisoft/gh-secrets-action
+          repository: Nochisoft/learn-git
           token: ${{ secrets.ACTION_PAT }}
           secrets: |
             AZURE_CRED1: {{ env.PROJECT_SPN }}
