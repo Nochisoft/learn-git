@@ -30,7 +30,7 @@ jobs:
       - name: Test gh secrets action
         uses: ./
         with:
-          repository: kornicameister/gh-secrets-action
+          repository: Nochisoft/gh-secrets-action
           token: ${{ secrets.ACTION_PAT }}
           secrets: |
             AZURE_CRED1: {{ env.PROJECT_SPN }}
