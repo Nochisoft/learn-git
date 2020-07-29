@@ -23,7 +23,7 @@ jobs:
       # Specify the script here
           inlineScript:  |
             acc_spn=$(az account show)
-            ::set-env PROJECT_SPN=PROJECT_SPN::$acc_spn
+            echo  "::set-env name=PROJECT_SPN::$acc_spn"
       
 
       - uses: actions/checkout@v2
