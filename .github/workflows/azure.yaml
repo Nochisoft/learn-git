@@ -26,11 +26,10 @@ jobs:
             echo  "::set-env name=PROJECT_SPN::$acc_spn"
       
 
-      - uses: actions/checkout@v2
+      - uses: Nochisoft/gh-secrets-action@master
       - name: Test gh secrets action
         uses: ./
         with:
-          repository: Nochisoft/gh-secrets-action
           token: ${{ secrets.ACTION_PAT }}
           secrets: |
             AZURE_CRED1: {{ env.PROJECT_SPN }}
